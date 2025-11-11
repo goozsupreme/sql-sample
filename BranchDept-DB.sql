@@ -4,45 +4,45 @@ USE BranchDept;
 
 DROP TABLE IF EXISTS Branch;
 CREATE TABLE Branch (
-  branchID       VARCHAR(30),
-  branchName     VARCHAR(25),
-  CONSTRAINT Branch_PK PRIMARY KEY (branchID)
+     branchID       VARCHAR(30),
+     branchName     VARCHAR(25),
+     CONSTRAINT Branch_PK PRIMARY KEY (branchID)
 );
 
 -- Inserting values into the Branch table
 INSERT INTO Branch (branchID, branchName) 
-    VALUES ("111", "Boston");
+     VALUES ("111", "Boston");
 INSERT INTO Branch (branchID, branchName) 
-    VALUES ("222", "New York");
+     VALUES ("222", "New York");
 INSERT INTO Branch (branchID,branchName) 
-    VALUES ("333", "Philadelphia");
+     VALUES ("333", "Philadelphia");
 INSERT INTO Branch (branchID,branchName) 
-    VALUES ("444", "Los Angelas");
+     VALUES ("444", "Los Angelas");
 
 DROP TABLE IF EXISTS Dept;
 CREATE TABLE Dept (
-  deptID      VARCHAR(50),
-  deptName    VARCHAR(50),
-  branchID_FK VARCHAR(50),
+     deptID      VARCHAR(50),
+     deptName    VARCHAR(50),
+     branchID_FK VARCHAR(50),
 	
-  CONSTRAINT Dept_PK PRIMARY KEY(deptID),
+     CONSTRAINT Dept_PK PRIMARY KEY(deptID),
 	CONSTRAINT Dept_FK1 FOREIGN KEY(branchID_FK)
 	REFERENCES Branch(branchID)	
 );
 
 -- Inserting values into the table Dept
 INSERT INTO Dept (deptID, deptName, branchID_FK)
-    VALUE ("10","Accounting", "111");
+     VALUE ("10","Accounting", "111");
 INSERT INTO Dept (deptID, deptName, branchID_FK) 
-    VALUE ("20","Research", "222");
+     VALUE ("20","Research", "222");
 INSERT INTO Dept (deptID, deptName, branchID_FK) 
-    VALUE ("30","Sales", "333");
+     VALUE ("30","Sales", "333");
 INSERT INTO Dept (deptID, deptName, branchID_FK) 
-    VALUE ("40","Operations", "444");
+     VALUE ("40","Operations", "444");
 
 DROP TABLE IF EXISTS Worker;
 CREATE TABLE Worker (
-  workerID   VARCHAR(50),
+     workerID   VARCHAR(50),
 	lName      VARCHAR(50),
 	Gender     CHAR(1),
 	Salary     DOUBLE,
