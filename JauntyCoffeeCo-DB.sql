@@ -52,3 +52,40 @@ CREATE TABLE Coffee(
     CONSTRAINT Coffee_FK1 FOREIGN KEY (shop_id_FK) REFERENCES COFFEE_SHOP (shop_id),
     CONSTRAINT Coffee_FK2 FOREIGN KEY (supplier_id_FK) REFERENCES SUPPLIER (supplier_id)
     );
+
+-- Inserting values into the tables
+
+-- Coffee Shop
+INSERT INTO Coffee_Shop (shop_id, shop_name, city, state)
+    VALUES ("10", "Starbucks", "NYC", "NY");
+INSERT INTO Coffee_Shop (shop_id, shop_name, city, state)
+    VALUES ("11", "Ultimo Coffee", "Philadelphia", "PA");
+INSERT INTO Coffee_Shop (shop_id, shop_name, city, state)
+    VALUES ("12", "Bold Coffee", "Trenton", "NJ");
+
+
+-- Supplier
+INSERT INTO Supplier (supplier_id, company_name, country, sales_contact_name, email)
+    VALUES ("13", "Starbucks", "USA", "Jon Snow", "jon.snow@gmail.com");
+INSERT INTO Supplier (supplier_id, company_name, country, sales_contact_name, email)
+    VALUES ("14", "McDonalds", "Germany", "Jeor Mormont", "jeor.mormo@gmail.com");
+INSERT INTO Supplier (supplier_id, company_name, country, sales_contact_name, email)
+    VALUES ("15", "Dunkin Donuts", "France", "Davos Seaworth", "davos.seaworth@gmail.com");
+
+
+-- Employee
+INSERT INTO Employee (employee_id, first_name, last_name, hire_date, job_title, shop_id_FK) 
+    VALUES ("19", "Eddard", "Stark", "2020-06-24", "Manager", "10");
+INSERT INTO Employee (employee_id, first_name, last_name, hire_date, job_title, shop_id_FK) 
+    VALUES ("20", "Robert", "Baratheon", "2017-04-02", "CEO", "11");
+INSERT INTO Employee (employee_id, first_name, last_name, hire_date, job_title, shop_id_FK) 
+    VALUES ("21", "Tyrion", "Lannister", "2020-04-15", "Barista", "12");
+
+
+-- Coffee
+INSERT INTO Coffee (coffee_id, shop_id_FK, supplier_id_FK, coffee_name, price_per_pound)
+    VALUES ("16", "10", "13", "Americano", "10.50");
+INSERT INTO Coffee (coffee_id, shop_id_FK, supplier_id_FK, coffee_name, price_per_pound)
+    VALUES ("17", "11", "14", "Mocha", "24.75");
+INSERT INTO Coffee (coffee_id, shop_id_FK, supplier_id_FK, coffee_name, price_per_pound)
+    VALUES ("18", "12", "15", "Cold Brew", "15.25");
